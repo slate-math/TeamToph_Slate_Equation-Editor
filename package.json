@@ -1,8 +1,12 @@
 {
+  "homepage": "http://abarber7.github.io/Beta_Prototype-Equation_Editor",
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.1.5",
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -10,13 +14,24 @@
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "@types/styled-components": "^5.1.7",
+    "@udecode/slate-plugins": "^0.73.0",
+    "gh-pages": "^3.1.0",
+    "react": "^16.8",
+    "react-dom": "^16.8",
+    "react-is": "^16.8",
     "react-scripts": "4.0.3",
+    "slate": "^0.59.0",
+    "slate-history": "^0.59.0",
+    "slate-hyperscript": "^0.59.0",
+    "slate-react": "^0.59.0",
+    "styled-components": "^5.0.0",
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -39,5 +54,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@storybook/addon-knobs": "^6.1.20"
   }
 }
