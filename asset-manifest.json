@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Beta_Prototype-Equation_Editor/static/css/main.8c8b27cf.chunk.css",
+    "main.js": "/Beta_Prototype-Equation_Editor/static/js/main.a7806515.chunk.js",
+    "main.js.map": "/Beta_Prototype-Equation_Editor/static/js/main.a7806515.chunk.js.map",
+    "runtime-main.js": "/Beta_Prototype-Equation_Editor/static/js/runtime-main.0d1471d9.js",
+    "runtime-main.js.map": "/Beta_Prototype-Equation_Editor/static/js/runtime-main.0d1471d9.js.map",
+    "static/js/2.a31fe1f5.chunk.js": "/Beta_Prototype-Equation_Editor/static/js/2.a31fe1f5.chunk.js",
+    "static/js/2.a31fe1f5.chunk.js.map": "/Beta_Prototype-Equation_Editor/static/js/2.a31fe1f5.chunk.js.map",
+    "static/js/3.6343f555.chunk.js": "/Beta_Prototype-Equation_Editor/static/js/3.6343f555.chunk.js",
+    "static/js/3.6343f555.chunk.js.map": "/Beta_Prototype-Equation_Editor/static/js/3.6343f555.chunk.js.map",
+    "index.html": "/Beta_Prototype-Equation_Editor/index.html",
+    "static/css/main.8c8b27cf.chunk.css.map": "/Beta_Prototype-Equation_Editor/static/css/main.8c8b27cf.chunk.css.map",
+    "static/js/2.a31fe1f5.chunk.js.LICENSE.txt": "/Beta_Prototype-Equation_Editor/static/js/2.a31fe1f5.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0d1471d9.js",
+    "static/js/2.a31fe1f5.chunk.js",
+    "static/css/main.8c8b27cf.chunk.css",
+    "static/js/main.a7806515.chunk.js"
+  ]
+}
