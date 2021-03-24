@@ -121,19 +121,13 @@ const initialValueTable: Node[] = [
     type: options.p.type,
     children: [
       {
-        text: 'This is a separate Editor.',
-        [options.bold.type]: true,
-        [options.italic.type]: true,
-        [options.underline.type]: true,
+        text: 'Type "\\" and a character to begin',
       },
     ],
   }
 ];
 
   const plugins: SlatePlugin[] = [
-    BoldPlugin(options),
-    ItalicPlugin(options),
-    UnderlinePlugin(options),
     ParagraphPlugin(options),
     HeadingPlugin(options),
     CodeBlockPlugin(options),
@@ -142,44 +136,30 @@ const initialValueTable: Node[] = [
     ListPlugin(options),
     TablePlugin(options),
     ResetBlockTypePlugin(optionsResetBlockTypes),
-  ];
-  if (boolean('SoftBreakPlugin', true))
-    plugins.push(
       SoftBreakPlugin({
-        rules: [
-          { hotkey: 'shift+enter' },
-          {
-            hotkey: 'enter',
-            query: {
-              allow: [options.code_block.type, options.blockquote.type],
-            },
-          },
-        ],
-      })
-    );
-  if (boolean('ExitBreakPlugin', true))
-    plugins.push(
-      ExitBreakPlugin({
-        rules: [
-          {
-            hotkey: 'mod+enter',
-          },
-          {
-            hotkey: 'mod+shift+enter',
-            before: true,
-          },
-          {
-            hotkey: 'enter',
-            query: {
-              start: true,
-              end: true,
-              allow: headingTypes,
-            },
-          },
-        ],
-      })
-    );
-
+    rules: [
+      { hotkey: 'shift+enter' },
+    ],
+  }),
+  ExitBreakPlugin({
+    rules: [
+      {
+        hotkey: 'mod+enter',
+        level: 0,
+      }, 
+      {
+        hotkey: 'mod+shift+enter',
+        before: true,
+        level: 0,
+      },
+      {
+        hotkey: 'enter',
+        level: 0,
+      },
+    ],
+  }),
+  ];
+  
 
   const withPlugins=[withReact, withHistory] as const;
  if (boolean('TablePlugin', true)) plugins.push(TablePlugin(options));

@@ -7,7 +7,14 @@ export const getEmptyTableNode = (options?: TableOptions) => {
   const { table } = setDefaults(options, DEFAULTS_TABLE);
 
   return {
-    type: table.type,
+    children:[
+    {type: table.type,
     children: [getEmptyRowNode(2, options), getEmptyRowNode(2, options)],
+    },
+    {
+      type: "input",
+      children: [{ text: " " }]
+    }
+    ]
   };
 };

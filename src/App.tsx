@@ -3,7 +3,7 @@ import { text } from '@storybook/addon-knobs';
 import {
   EditablePlugins,
   HeadingPlugin,
-  ParagraphPlugin,
+  ParagraphPlugin, 
   HeadingToolbar,
   pipe,
   SlateDocument,
@@ -14,6 +14,8 @@ import {
   deleteTable,
   TablePlugin,
   withTable,
+  SoftBreakPlugin,
+  ExitBreakPlugin
 } from '@udecode/slate-plugins';
 import { MentionNodeData, MentionPlugin, MentionSelect, useMention } from './mention'
 
@@ -39,9 +41,9 @@ import './App.css';
 
 /*export default {
   title: 'Elements/Mention',
-  component: MentionPlugin,
+  component: MentionPlugin, 
   subcomponents: {
-    useMention,
+    useMention, 
     MentionSelect,
   },
 };*/
@@ -59,6 +61,28 @@ const plugins = [
         prefix: text('prefix', '\\'),
       },
     },
+  }), 
+  SoftBreakPlugin({
+    rules: [
+      { hotkey: 'shift+enter' },
+    ],
+  }),
+  ExitBreakPlugin({
+    rules: [
+      {
+        hotkey: 'mod+enter',
+        level: 0,
+      }, 
+      {
+        hotkey: 'mod+shift+enter',
+        before: true,
+        level: 0,
+      },
+      {
+        hotkey: 'enter',
+        level: 0,
+      },
+    ],
   }),
 ];
 
@@ -86,7 +110,7 @@ const createReactEditor = () => () => {
     maxSuggestions: 10,
     trigger: '\\',
   });
-
+ 
   return (
     <Slate
       editor={editor}
@@ -146,7 +170,18 @@ const createReactEditor = () => () => {
 
 function App() {
   const Editor = createReactEditor();
-  return <Editor />;
+  return( 
+  <div className= "App">
+  <header className="App-header">
+    <p>
+      Slate Equation Editor
+    </p>
+    <header className="App-body">
+       <Editor />
+     </header>
+  </header>
+  </div>
+  );
 }
 
 export default App;

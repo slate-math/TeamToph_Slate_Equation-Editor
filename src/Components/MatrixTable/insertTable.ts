@@ -10,6 +10,7 @@ export const insertTable = (editor: Editor, options?: TableOptions) => {
 
   if (!someNode(editor, { match: { type: table.type } })) {
     Transforms.insertNodes(editor, getEmptyTableNode(options));
+    Transforms.move(editor);
   }
 };
 export default insertTable;

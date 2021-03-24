@@ -7,11 +7,10 @@ export const getTableElementStyles = ({
     root: [
       {
         // Insert css properties
-        margin: '10px 0',
+        margin: '10px',
         borderCollapse: 'collapse',
-        width: '5%',
-        display: 'inline',
-        contenteditable:"false"      
+        width: 'auto',
+        contenteditable:"false",
       },
       className,
     ],

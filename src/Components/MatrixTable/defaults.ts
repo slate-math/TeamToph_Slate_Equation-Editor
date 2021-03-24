@@ -73,7 +73,6 @@ export const DEFAULTS_TABLE: Record<
           padding: '5px',
           minWidth: '14px',
           minHeight: '14px',
-          textAlign: 'center',
           selectors: {
             '> *': {
               margin: 0,
