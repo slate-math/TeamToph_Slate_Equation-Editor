@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Beta_Prototype-Equation_Editor/static/css/main.050734d6.chunk.css",
+    "main.css": "/Beta_Prototype-Equation_Editor/static/css/main.d35e866c.chunk.css",
     "main.js": "/Beta_Prototype-Equation_Editor/static/js/main.e8e59069.chunk.js",
     "main.js.map": "/Beta_Prototype-Equation_Editor/static/js/main.e8e59069.chunk.js.map",
     "runtime-main.js": "/Beta_Prototype-Equation_Editor/static/js/runtime-main.89cb8a87.js",
@@ -10,13 +10,13 @@
     "static/js/3.0560ec82.chunk.js": "/Beta_Prototype-Equation_Editor/static/js/3.0560ec82.chunk.js",
     "static/js/3.0560ec82.chunk.js.map": "/Beta_Prototype-Equation_Editor/static/js/3.0560ec82.chunk.js.map",
     "index.html": "/Beta_Prototype-Equation_Editor/index.html",
-    "static/css/main.050734d6.chunk.css.map": "/Beta_Prototype-Equation_Editor/static/css/main.050734d6.chunk.css.map",
+    "static/css/main.d35e866c.chunk.css.map": "/Beta_Prototype-Equation_Editor/static/css/main.d35e866c.chunk.css.map",
     "static/js/2.2cadfae6.chunk.js.LICENSE.txt": "/Beta_Prototype-Equation_Editor/static/js/2.2cadfae6.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.89cb8a87.js",
     "static/js/2.2cadfae6.chunk.js",
-    "static/css/main.050734d6.chunk.css",
+    "static/css/main.d35e866c.chunk.css",
     "static/js/main.e8e59069.chunk.js"
   ]
 }
