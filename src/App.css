@@ -1,3 +1,12 @@
+div {
+  display: inline;
+}
+
+p {
+  display: inline;
+}
+
+
 .App {
   background-color: whitesmoke;
   text-align: center; 
@@ -5,10 +14,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  outline: 5px solid black;
-  padding: 1%;
-  height: 1200px;
-  width:auto;
+  outline: 5px solid black;  
 }
 
 .App-header {
@@ -34,9 +40,21 @@
   overflow: scroll;
   padding: 1%;
   width: 95%;
-  height: 100%;
+  height: 1200px;  
 }
 
-div{
-  white-space: normal;
+.btn-group button {
+  background-color: rgb(255, 255, 255); /*background */
+  border: 1px solid black;
+  color: rgb(0, 0, 0);
+  width: 3.5em;
+  height: 3.5em;
+  cursor: pointer;
+  float: left;
+  height: auto;
+  width: auto;
+  display: inline-flex;
+  align-items: center;
 }
+
+

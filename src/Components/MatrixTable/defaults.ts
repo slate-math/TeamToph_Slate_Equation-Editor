@@ -19,7 +19,7 @@ export const DEFAULTS_TABLE: Record<
       as: 'table',
       styles: {
         root: {
-          float: 'left',
+          display: 'inline-block',
           padding: '8px',
           margin: '4px',
         },
