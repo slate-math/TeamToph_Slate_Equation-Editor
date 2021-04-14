@@ -27,11 +27,10 @@ export const TableElementBase = ({
     className,
     // Other style props
   });
-
   return (
-    <table {...attributes} className={classNames.root} {...htmlAttributes}>
-      <tbody>{children}</tbody>
-    </table>
+      <table {...attributes} className={classNames.root} {...htmlAttributes}>
+        <tbody >{children}</tbody>
+      </table>   
   );
 };
 

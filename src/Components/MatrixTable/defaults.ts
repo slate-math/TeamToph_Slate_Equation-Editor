@@ -20,6 +20,7 @@ export const DEFAULTS_TABLE: Record<
       styles: {
         root: {
           display: 'inline-block',
+          verticalAlign: 'middle',
           padding: '8px',
           margin: '4px',
         },

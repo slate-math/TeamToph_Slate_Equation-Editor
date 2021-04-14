@@ -53,6 +53,7 @@ import {
  import addColumn from './addColumn'
  import insertTable from './insertTable'
 
+
 import DEFAULTS_TABLE from './defaults'
 
 import { Tooltip } from '@material-ui/core';
@@ -169,7 +170,11 @@ const initialValueTable: Node[] = [
 
    const editor = useMemo(() => pipe(createEditor(), ...withPlugins), []);
 
-    const [value, setValue] = useState(initialValueTable);    
+    const [value, setValue] = useState(initialValueTable);
+
+  
+
+    
 
     return (
       <Slate
@@ -179,49 +184,37 @@ const initialValueTable: Node[] = [
       >
       
         <HeadingToolbar>        
-         <button>
           <ToolbarTable 
-              {...options}
-              icon={<Tooltip title="Add New Matrix"><BorderAllIcon /></Tooltip>}
-              transform={insertTable}
-            />  
-        </button>   
-        <button>
-        <ToolbarTable
+            {...options}
+            icon={<Tooltip title="Add New Matrix"><BorderAllIcon /></Tooltip>}
+            transform={insertTable}
+          />          
+          <ToolbarTable
             {...options}
             icon={<Tooltip title="Delete Matrix"><BorderClearIcon /></Tooltip>}
             transform={deleteTable}
           />
-          </button>              
-          <button>
           <ToolbarTable
             {...options}
             icon={<Tooltip title="Add Row"><BorderBottomIcon /></Tooltip>}
             transform={addRow}
           />
-          </button>         
-          <button>
           <ToolbarTable
             {...options}
             icon={<Tooltip title="Delete Row"><BorderTopIcon /></Tooltip>}
             transform={deleteRow}
           />
-          </button>         
-          <button>
           <ToolbarTable
             {...options}
             icon={<Tooltip title="Add Column"><BorderLeftIcon /></Tooltip>}
             transform={addColumn}
           />
-          </button>         
-          <button>
           <ToolbarTable
             {...options}
             icon={<Tooltip title="Delete Column"><BorderRightIcon /></Tooltip>}
             transform={deleteColumn}
           />
-          </button> 
-          </HeadingToolbar>
+        </HeadingToolbar>
         <EditablePlugins plugins={plugins} 
         placeholder= '&#11034;' />
       </Slate>
