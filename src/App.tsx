@@ -77,13 +77,6 @@ const plugins = [
       { hotkey: 'shift+enter' },
       {
         hotkey: 'enter',
-        query: {
-          allow: [
-            options.code_block.type,
-            options.blockquote.type,
-            options.td.type,
-          ],
-        },
       },
     ],
   }),
