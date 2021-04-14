@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Beta_Prototype-Equation_Editor/static/css/main.8a7160a8.chunk.css",
-    "main.js": "/Beta_Prototype-Equation_Editor/static/js/main.9209432f.chunk.js",
-    "main.js.map": "/Beta_Prototype-Equation_Editor/static/js/main.9209432f.chunk.js.map",
+    "main.js": "/Beta_Prototype-Equation_Editor/static/js/main.bda40369.chunk.js",
+    "main.js.map": "/Beta_Prototype-Equation_Editor/static/js/main.bda40369.chunk.js.map",
     "runtime-main.js": "/Beta_Prototype-Equation_Editor/static/js/runtime-main.0d91ae33.js",
     "runtime-main.js.map": "/Beta_Prototype-Equation_Editor/static/js/runtime-main.0d91ae33.js.map",
     "static/js/2.61e4c4aa.chunk.js": "/Beta_Prototype-Equation_Editor/static/js/2.61e4c4aa.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.0d91ae33.js",
     "static/js/2.61e4c4aa.chunk.js",
     "static/css/main.8a7160a8.chunk.css",
-    "static/js/main.9209432f.chunk.js"
+    "static/js/main.bda40369.chunk.js"
   ]
 }
