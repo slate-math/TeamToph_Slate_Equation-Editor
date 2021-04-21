@@ -7,7 +7,7 @@ export const getMentionElementStyles = ({
 }: MentionElementStyleProps): MentionElementStyles => {
   return {
     root: [
-      /*{
+      /*\{
         // Insert css properties
         padding: '3px 3px 2px',
         margin: '0 1px',

@@ -20,6 +20,7 @@ export const getMentionSelectStyles = ({
       borderRadius: '3px',
       background: 'transparent',
       cursor: 'pointer',
+      display: 'block',
     },
   ];
 
@@ -42,7 +43,7 @@ export const getMentionSelectStyles = ({
         padding: '3px',
         background: 'white',
         borderRadius: '4px',
-        boxShadow: '0 1px 5px rgba(0,0,0,.2)',
+        boxShadow: '0 1px 5px rgba(0,0,0,.2)',        
       },
       className,
     ],

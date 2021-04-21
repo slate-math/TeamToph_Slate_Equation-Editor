@@ -14,14 +14,27 @@ import {
   deleteTable,
   TablePlugin,
   withTable, 
-  SoftBreakPlugin,
+  SoftBreakPlugin, 
   ExitBreakPlugin,
   MARK_SUBSCRIPT,
   MARK_SUPERSCRIPT,
-  SubscriptPlugin,
-  SuperscriptPlugin,
-  withMarks,
-  ToolbarMark
+  SubscriptPlugin,  
+  SuperscriptPlugin, 
+  withMarks,   
+  ToolbarMark,
+  BoldPlugin,
+  ItalicPlugin,
+  ListPlugin,
+  HighlightPlugin,
+  MARK_BOLD,
+  MARK_ITALIC,
+  MARK_STRIKETHROUGH,
+  MARK_UNDERLINE,
+  MARK_HIGHLIGHT, 
+  StrikethroughPlugin,
+  UnderlinePlugin,
+  ToolbarList,
+  withList
 } from '@udecode/slate-plugins';
 import { MentionNodeData, MentionPlugin, MentionSelect, useMention } from './mention'  
 
@@ -39,6 +52,12 @@ import BorderLeftIcon from '@material-ui/icons/BorderLeft';
 import BorderRightIcon from '@material-ui/icons/BorderRight';
 import { Subscript } from '@styled-icons/foundation/Subscript';
 import { Superscript } from '@styled-icons/foundation/Superscript';
+import { TypeBold, TypeItalic, TypeStrikethrough, TypeUnderline} from '@styled-icons/bootstrap';
+import  BorderColor from '@material-ui/icons/BorderColor';
+import Divider from '@material-ui/core/Divider';
+import Grid from '@material-ui/core/Grid';
+import { ListOl} from '@styled-icons/boxicons-regular/ListOl';
+import { ListUl} from '@styled-icons/boxicons-regular/ListUl';
 import { createEditor} from 'slate';
 import { withHistory } from 'slate-history';
 import { Slate, withReact } from 'slate-react';
@@ -58,6 +77,12 @@ import './App.css';
 
 const plugins = [
   ParagraphPlugin(options),
+  BoldPlugin(options),
+  ItalicPlugin(options),
+  HighlightPlugin(options),
+  UnderlinePlugin(options),
+  StrikethroughPlugin(options),
+  ListPlugin(options),
   HeadingPlugin(options),
   TablePlugin(options),
   SubscriptPlugin(options),
@@ -107,6 +132,7 @@ const withPlugins = [
   withReact,
   withHistory,
   withMarks(),
+  withList(options),
   withInlineVoid({ plugins }),
   withTable(options),
 ] as const;
@@ -130,17 +156,47 @@ const createReactEditor = () => () => {
   });
  
   return (
-    <Slate
+    <Slate 
       editor={editor}
       value={value}
       onChange={(newValue) => { 
         setValue(newValue as SlateDocument);
-        onChangeMention(editor);
-      }} 
+        onChangeMention(editor);  
+      }}  
     > 
-      <HeadingToolbar>
-      <div className="btn-group">
-      <button>
+    <div className="fixed-top"> 
+    
+    <h4>Slate Equation Editor</h4> 
+    
+     <HeadingToolbar className="HT">
+     <div className="btn-group"> 
+     <Grid container alignItems="center">
+     
+        <button>
+        <ToolbarMark type={MARK_BOLD} icon={<Tooltip title="Bold"><TypeBold/></Tooltip>}/>
+        </button>   
+        <button> 
+        <ToolbarMark type={MARK_ITALIC} icon={<Tooltip title="Italic"><TypeItalic/></Tooltip>}/>
+        </button>   
+        <button>
+        <ToolbarMark type={MARK_UNDERLINE} icon={<Tooltip title="Underline"><TypeUnderline/></Tooltip>}/>
+        </button>   
+        <button>
+        <ToolbarMark type={MARK_STRIKETHROUGH} icon={<Tooltip title="StrikeThrough"><TypeStrikethrough/></Tooltip>}/>
+        </button>   
+        <button>
+        <ToolbarMark type={MARK_HIGHLIGHT} icon={<Tooltip title="Highlight"><BorderColor/></Tooltip>}/>
+        </button>   
+        <button>
+        <ToolbarList {...options} typeList={options.ul.type} icon={<Tooltip title="Bullet List"><ListUl/></Tooltip>}/>
+        </button>   
+        <button>
+        <ToolbarList {...options} typeList={options.ol.type} icon={<Tooltip title="Numbered List"><ListOl/></Tooltip>}/>
+        </button> 
+
+        <Divider orientation="vertical" flexItem />
+
+      <button> 
           <ToolbarTable 
               {...options}
               icon={<Tooltip title="Add New Matrix"><BorderAllIcon /></Tooltip>}
@@ -182,6 +238,9 @@ const createReactEditor = () => () => {
             transform={deleteColumn}
           />
           </button> 
+
+          <Divider orientation="vertical" flexItem />
+
           <button> 
           <ToolbarMark
           type={MARK_SUPERSCRIPT}
@@ -196,9 +255,12 @@ const createReactEditor = () => () => {
           icon={<Tooltip title="Subscript"><Subscript/></Tooltip>}
         />        
           </button>
-         </div>
+          </Grid>
+         </div> 
+        
 
         </HeadingToolbar>
+         </div>
       <EditablePlugins
         plugins={plugins}
         placeholder='Enter some text...'
@@ -219,11 +281,6 @@ function App() {
   const Editor = createReactEditor();
   return( 
   <div className= "App">
-  <header className="App-header">
-    <p>
-      Slate Equation Editor
-    </p>
-  </header>
       <body className="App-body">
        <Editor />
      </body>
