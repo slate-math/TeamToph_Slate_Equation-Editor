@@ -24,7 +24,6 @@ import {
   ToolbarMark,
   BoldPlugin,
   ItalicPlugin,
-  ListPlugin,
   HighlightPlugin,
   MARK_BOLD,
   MARK_ITALIC,
@@ -33,8 +32,6 @@ import {
   MARK_HIGHLIGHT, 
   StrikethroughPlugin,
   UnderlinePlugin,
-  ToolbarList,
-  withList
 } from '@udecode/slate-plugins';
 import { MentionNodeData, MentionPlugin, MentionSelect, useMention } from './mention'  
 
@@ -56,8 +53,6 @@ import { TypeBold, TypeItalic, TypeStrikethrough, TypeUnderline} from '@styled-i
 import  BorderColor from '@material-ui/icons/BorderColor';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
-import { ListOl} from '@styled-icons/boxicons-regular/ListOl';
-import { ListUl} from '@styled-icons/boxicons-regular/ListUl';
 import { createEditor} from 'slate';
 import { withHistory } from 'slate-history';
 import { Slate, withReact } from 'slate-react';
@@ -82,7 +77,6 @@ const plugins = [
   HighlightPlugin(options),
   UnderlinePlugin(options),
   StrikethroughPlugin(options),
-  ListPlugin(options),
   HeadingPlugin(options),
   TablePlugin(options),
   SubscriptPlugin(options),
@@ -132,7 +126,6 @@ const withPlugins = [
   withReact,
   withHistory,
   withMarks(),
-  withList(options),
   withInlineVoid({ plugins }),
   withTable(options),
 ] as const;
@@ -187,12 +180,6 @@ const createReactEditor = () => () => {
         <button>
         <ToolbarMark type={MARK_HIGHLIGHT} icon={<Tooltip title="Highlight"><BorderColor/></Tooltip>}/>
         </button>   
-        <button>
-        <ToolbarList {...options} typeList={options.ul.type} icon={<Tooltip title="Bullet List"><ListUl/></Tooltip>}/>
-        </button>   
-        <button>
-        <ToolbarList {...options} typeList={options.ol.type} icon={<Tooltip title="Numbered List"><ListOl/></Tooltip>}/>
-        </button> 
 
         <Divider orientation="vertical" flexItem />
 
