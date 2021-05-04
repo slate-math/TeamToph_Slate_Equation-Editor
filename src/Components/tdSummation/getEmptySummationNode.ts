@@ -17,7 +17,7 @@ export const getEmptySummationNode = (options?: TableOptions) => {
       children: [{ text: " " }]
     },
     {type: table.type,
-    children: [getEmptySummationRowNode(1, ), getSumSymbolRowNode(2, ), getEmptySummationRowNode(1, )],
+    children: [getEmptySummationRowNode(1, ), getSumSymbolRowNode(1, ), getEmptySummationRowNode(1, )],
     },
     {
       children: [{ text: " " }]
