@@ -1,22 +1,26 @@
 {
   "files": {
-    "main.css": "/Beta_Prototype-Equation_Editor/static/css/main.b61c6696.chunk.css",
-    "main.js": "/Beta_Prototype-Equation_Editor/static/js/main.ab87b530.chunk.js",
-    "main.js.map": "/Beta_Prototype-Equation_Editor/static/js/main.ab87b530.chunk.js.map",
-    "runtime-main.js": "/Beta_Prototype-Equation_Editor/static/js/runtime-main.e3eb94f9.js",
-    "runtime-main.js.map": "/Beta_Prototype-Equation_Editor/static/js/runtime-main.e3eb94f9.js.map",
-    "static/js/2.9b364c12.chunk.js": "/Beta_Prototype-Equation_Editor/static/js/2.9b364c12.chunk.js",
-    "static/js/2.9b364c12.chunk.js.map": "/Beta_Prototype-Equation_Editor/static/js/2.9b364c12.chunk.js.map",
-    "static/js/3.136bdd64.chunk.js": "/Beta_Prototype-Equation_Editor/static/js/3.136bdd64.chunk.js",
-    "static/js/3.136bdd64.chunk.js.map": "/Beta_Prototype-Equation_Editor/static/js/3.136bdd64.chunk.js.map",
+    "main.css": "/Beta_Prototype-Equation_Editor/static/css/main.eb4f796d.chunk.css",
+    "main.js": "/Beta_Prototype-Equation_Editor/static/js/main.d04f6930.chunk.js",
+    "main.js.map": "/Beta_Prototype-Equation_Editor/static/js/main.d04f6930.chunk.js.map",
+    "runtime-main.js": "/Beta_Prototype-Equation_Editor/static/js/runtime-main.1fea6574.js",
+    "runtime-main.js.map": "/Beta_Prototype-Equation_Editor/static/js/runtime-main.1fea6574.js.map",
+    "static/css/2.c3b9be8e.chunk.css": "/Beta_Prototype-Equation_Editor/static/css/2.c3b9be8e.chunk.css",
+    "static/js/2.f83e6ac5.chunk.js": "/Beta_Prototype-Equation_Editor/static/js/2.f83e6ac5.chunk.js",
+    "static/js/2.f83e6ac5.chunk.js.map": "/Beta_Prototype-Equation_Editor/static/js/2.f83e6ac5.chunk.js.map",
+    "static/js/3.8d7c4621.chunk.js": "/Beta_Prototype-Equation_Editor/static/js/3.8d7c4621.chunk.js",
+    "static/js/3.8d7c4621.chunk.js.map": "/Beta_Prototype-Equation_Editor/static/js/3.8d7c4621.chunk.js.map",
     "index.html": "/Beta_Prototype-Equation_Editor/index.html",
-    "static/css/main.b61c6696.chunk.css.map": "/Beta_Prototype-Equation_Editor/static/css/main.b61c6696.chunk.css.map",
-    "static/js/2.9b364c12.chunk.js.LICENSE.txt": "/Beta_Prototype-Equation_Editor/static/js/2.9b364c12.chunk.js.LICENSE.txt"
+    "static/css/2.c3b9be8e.chunk.css.map": "/Beta_Prototype-Equation_Editor/static/css/2.c3b9be8e.chunk.css.map",
+    "static/css/main.eb4f796d.chunk.css.map": "/Beta_Prototype-Equation_Editor/static/css/main.eb4f796d.chunk.css.map",
+    "static/js/2.f83e6ac5.chunk.js.LICENSE.txt": "/Beta_Prototype-Equation_Editor/static/js/2.f83e6ac5.chunk.js.LICENSE.txt",
+    "static/media/katex.min.css": "/Beta_Prototype-Equation_Editor/static/media/KaTeX_Typewriter-Regular.d3c8e68f.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.e3eb94f9.js",
-    "static/js/2.9b364c12.chunk.js",
-    "static/css/main.b61c6696.chunk.css",
-    "static/js/main.ab87b530.chunk.js"
+    "static/js/runtime-main.1fea6574.js",
+    "static/css/2.c3b9be8e.chunk.css",
+    "static/js/2.f83e6ac5.chunk.js",
+    "static/css/main.eb4f796d.chunk.css",
+    "static/js/main.d04f6930.chunk.js"
   ]
 }
