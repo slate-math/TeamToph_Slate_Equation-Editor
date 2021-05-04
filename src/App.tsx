@@ -1,4 +1,5 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useCallback } from 'react';
+import { setDefaults } from '@udecode/slate-plugins';
 import { text } from '@storybook/addon-knobs';
 import {
   EditablePlugins, 
@@ -9,7 +10,7 @@ import {
   SlateDocument,
   withInlineVoid, 
   ToolbarTable,
-   deleteColumn,
+   deleteColumn, 
   deleteRow,
   deleteTable,
   TablePlugin,
@@ -27,7 +28,7 @@ import {
   HighlightPlugin,
   MARK_BOLD,
   MARK_ITALIC,
-  MARK_STRIKETHROUGH,
+  MARK_STRIKETHROUGH, 
   MARK_UNDERLINE,
   MARK_HIGHLIGHT, 
   StrikethroughPlugin,
@@ -35,10 +36,9 @@ import {
 } from '@udecode/slate-plugins';
 import { MentionNodeData, MentionPlugin, MentionSelect, useMention } from './mention'  
 
-
 import addRow from './Components/MatrixTable/addRow';
 import addColumn from './Components/MatrixTable/addColumn';
-import insertTable from './Components/MatrixTable/insertTable';
+import insertTable from './Components/MatrixTable/insertTable'; 
 
 import { Tooltip } from '@material-ui/core';
 import BorderAllIcon from '@material-ui/icons/BorderAll';
@@ -53,12 +53,16 @@ import { TypeBold, TypeItalic, TypeStrikethrough, TypeUnderline} from '@styled-i
 import  BorderColor from '@material-ui/icons/BorderColor';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
-import { createEditor} from 'slate';
+import { createEditor,Transforms} from 'slate';
 import { withHistory } from 'slate-history';
-import { Slate, withReact } from 'slate-react';
+import { Slate, withReact} from 'slate-react';
 import { initialValueMentions, options } from './config/initialValues'; // Check this
 import { MENTIONABLES } from './config/mentionables'; // Check this
+import 'katex/dist/katex.min.css';
+import components from "./Components"
 import './App.css';
+import { getEmptyFractionNode } from './Components/thfraction/getEmptyFractionNode';
+import { getEmptySummationNode } from './Components/tdSummation/getEmptySummationNode';
 
 
 /*export default {
@@ -140,14 +144,16 @@ const createReactEditor = () => () => {
     onChangeMention,
     onKeyDownMention,
     search,
-    index,
+    index, 
     target,
     values,
   } = useMention(MENTIONABLES, {
     maxSuggestions: 10,
     trigger: '\\',
   });
- 
+
+  var Latex = require('react-latex');
+
   return (
     <Slate 
       editor={editor}
@@ -179,7 +185,7 @@ const createReactEditor = () => () => {
         </button>   
         <button>
         <ToolbarMark type={MARK_HIGHLIGHT} icon={<Tooltip title="Highlight"><BorderColor/></Tooltip>}/>
-        </button>   
+        </button>     
 
         <Divider orientation="vertical" flexItem />
 
@@ -234,26 +240,54 @@ const createReactEditor = () => () => {
           clear={MARK_SUBSCRIPT}
           icon={<Tooltip title="Superscript"><Superscript/></Tooltip>}
         />        
-          </button>
+          </button> 
         <button> 
-        <ToolbarMark
+        <ToolbarMark 
           type={MARK_SUBSCRIPT}
-          clear={MARK_SUPERSCRIPT}
+          clear={MARK_SUPERSCRIPT} 
           icon={<Tooltip title="Subscript"><Subscript/></Tooltip>}
-        />        
+        />         
           </button>
+          
+          <Tooltip title="Fraction">
+          <button onClick={() => { insertEquation(editor, "fraction"); }}>
+           {hasIcon("fraction")}
+          
+          </button> 
+          </Tooltip>  
+
+ 
+          <Tooltip title="Summation">
+          <button onClick={() => { insertEquation(editor, "summation"); }}>
+          {hasIcon("summation")}
+          </button>
+          </Tooltip>
+          
+          <Tooltip title="Limit">
+          <button onClick={() => { insertEquation(editor, "limit"); }}>
+           {hasIcon("limit")}
+          </button>
+          </Tooltip>
+
+          <Tooltip title="Integral">
+          <button>
+          <Latex displayMode={false}>{`$$ \\int $$`}</Latex>
+          </button>
+          </Tooltip>
+
           </Grid>
          </div> 
-        
 
         </HeadingToolbar>
          </div>
+      
       <EditablePlugins
         plugins={plugins}
         placeholder='Enter some text...'
         onKeyDown={[onKeyDownMention]}
         onKeyDownDeps={[index, search, target]}
       />
+ 
       <MentionSelect
         at={target}
         valueIndex={index}
@@ -263,6 +297,52 @@ const createReactEditor = () => () => {
     </Slate>
   );
 };
+
+/**
+ * This methods checks to see if an equation component has an icon property. It prevents
+ * the app from crashing when an icon isn't found.
+ *
+ * @param {string} eq   The name of the equation being looked up via intellisense hotkey
+ */
+const hasIcon = (eq) => {
+  try {
+    if (!components[eq].Icon()) throw "No icon found";
+    return components[eq].Icon();
+  } catch (err) {
+    console.log(err);
+  }
+};
+//const { table } = setDefaults(options, DEFAULTS_TABLE);
+  /**
+ * Inserts an equation's SlateDOM into the tree
+ *
+ * @param {string} eq   The name of the equation being looked up via intellisense hotkey
+ */
+const insertEquation = (editor, eq) => {
+  let equation = {
+    children: [{ text: "" }],
+  };
+  try {
+    if (!EQUATIONS.includes(eq)) throw "Equation not supported";
+    equation = components[eq].slateDOM();
+  } catch (err) {
+    console.log(err);
+  }
+  if (eq == "fraction"){
+    Transforms.insertNodes(editor, getEmptyFractionNode());
+    Transforms.move(editor);  
+  }
+  else if (eq == "summation") {
+    Transforms.insertNodes(editor, getEmptySummationNode());
+    Transforms.move(editor);  
+  } else {
+    Transforms.insertNodes(editor, equation);
+    Transforms.move(editor);  
+  }
+};
+
+// The different choices available in the drop-down box
+const EQUATIONS = Object.keys(components); 
 
 function App() {
   const Editor = createReactEditor();

@@ -31,11 +31,10 @@ const icon = (attributes, children) => {
   return (
     <>
       <div class="summation">
-        <span className="top-limit-ico">5</span>
+        <span className="top-limit-ico">x</span>
         <span className="sum-symbol-ico">&sum;</span>
-        <span class="bottom-limit-ico">x=1</span>
+        <span class="bottom-limit-ico">y=n</span>
       </div>
-      x
     </>
   );
 };

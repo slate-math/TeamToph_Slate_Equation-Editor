@@ -5,7 +5,7 @@ const dom = (eq) => ({
   children: [
     {
       type: "input",
-      children: [{ text: " " }],
+      children: [{ text: '\u2b1a'  }],
     },
   ],
 });

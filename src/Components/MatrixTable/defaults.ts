@@ -21,8 +21,11 @@ export const DEFAULTS_TABLE: Record<
         root: {
           display: 'inline-block',
           verticalAlign: 'middle',
-          padding: '8px',
-          margin: '4px',
+          padding: '0px',
+          margin: '0px',
+          borderBottom: '0px',
+          lineHeight: '0.1',
+          textAlign: 'center',
         },
       },
     },
@@ -43,10 +46,17 @@ export const DEFAULTS_TABLE: Record<
       as: 'th',
       styles: {
         root: {
-          backgroundColor: 'rgb(244, 245, 247)',
-          border: '1px solid rgb(193, 199, 208)',
-          padding: '8px',
-          minWidth: '48px',
+          backgroundColor: 'rgb(255, 255, 255)',
+          border: '1px solid black',
+          borderTop: '0px',
+          borderRight: '0px',
+          borderLeft: '0px',
+          padding: '0px',
+          fontWeight: 'normal',
+          margin: '0px',          
+          minWidth: '21px',
+          verticalAlign: 'middle',
+          lineHeight: '1.5',
           textAlign: 'center',
           selectors: {
             '> *': {
@@ -71,7 +81,7 @@ export const DEFAULTS_TABLE: Record<
         root: {
           backgroundColor: 'rgb(255, 255, 255)',
           border: '0px solid rgb(0, 0, 0)',
-          padding: '5px',
+          paddingRight: '4px',
           minWidth: '14px',
           minHeight: '14px',
           selectors: {

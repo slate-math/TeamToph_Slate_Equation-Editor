@@ -10,7 +10,6 @@ export const getTableElementStyles = ({
         margin: '10px',
         borderCollapse: 'collapse',
         width: 'auto',
-        contenteditable:"false",
       },
       className,
     ],

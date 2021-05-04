@@ -24,6 +24,7 @@
     "react": "^16.8",
     "react-dom": "^16.8",
     "react-is": "^16.8",
+    "react-latex": "^2.0.0",
     "react-scripts": "4.0.3",
     "slate": "^0.59.0",
     "slate-history": "^0.59.0",
