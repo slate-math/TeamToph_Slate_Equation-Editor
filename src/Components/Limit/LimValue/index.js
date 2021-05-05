@@ -5,7 +5,7 @@ const dom = () => ({
   children: [
     {
       type: "input",
-      children: [{ text: "x\u21920" }]
+      children: [{ text: "\u2b1a\u2192\u2b1a" }]
     }
   ]
 });
