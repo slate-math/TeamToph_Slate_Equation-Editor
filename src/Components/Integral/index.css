@@ -4,24 +4,28 @@
   display: inline-block;
   vertical-align: middle;
   text-align: center;
+  font-weight: bolder;
 }
 
 .integral > span {
   display: block;
-  font-size: 70%;
+  font-size: 100%;
+  font-weight: bolder;
 }
 
 .integral .top-limit {
   margin-bottom: -0.5ex;
+  font-weight: bolder;
 }
 
 .integral .bottom-limit {
   margin-top: -0.5ex;
+  font-weight: bolder;
 }
 
-.integral .int-symbol {
-  font-size: 1.5em;
-  font-weight: lighter;
+.integral .symbol {
+  font-size: 1.6em;
+  font-weight: bolder;
 }
 
 /*End of Integrals*/

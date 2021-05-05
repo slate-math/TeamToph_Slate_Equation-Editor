@@ -1,21 +1,21 @@
 import { setDefaults } from '@udecode/slate-plugins';
 import { DEFAULTS_PARAGRAPH } from '@udecode/slate-plugins';
 import { ParagraphPluginOptions } from '@udecode/slate-plugins';
-import { DEFAULTS_TABLE } from '../MatrixTable/defaults';
+import { DEFAULTS_TABLE } from '../../MatrixTable/defaults';
 import { TableOptions } from '@udecode/slate-plugins';
-import matrixElement from "../MatrixElement/index";
+import matrixElement from "../../MatrixElement/index";
 
 
-export const getEmptySummationCellNode = (
+export const getEmptyFractionCellNode = (
   options?: TableOptions & ParagraphPluginOptions & { header?: boolean }
 ) => {
-  const { td, p } = setDefaults(options, {
+  const { th, p } = setDefaults(options, {
     ...DEFAULTS_TABLE,
     ...DEFAULTS_PARAGRAPH,
   });
 
   return {
-    type: td.type,
+    type: th.type,
     children: [
       {
         type: p.type,

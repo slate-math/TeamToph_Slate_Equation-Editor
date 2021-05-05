@@ -1,12 +1,13 @@
 import { setDefaults } from '@udecode/slate-plugins';
 import { DEFAULTS_TABLE } from '../MatrixTable/defaults';
 import { TableOptions } from '@udecode/slate-plugins';
-import { getEmptySummationRowNode } from './getEmptySummationRowNode';
-import { getSumSymbolRowNode } from './getSumSymbolRowNode';
+import { getLimSymbolRowNode } from './getLimSymbolRowNode';
+import { getBottomLimSymbolRowNode } from './getBottomLimSymbolRowNode';
 
 
 
-export const getEmptySummationNode = (options?: TableOptions) => {
+
+export const getEmptyLimNode = (options?: TableOptions) => {
    const { table} = setDefaults(options, {
     ...DEFAULTS_TABLE,
   });
@@ -17,7 +18,7 @@ export const getEmptySummationNode = (options?: TableOptions) => {
       children: [{ text: " " }]
     },
     {type: table.type,
-    children: [getEmptySummationRowNode(1, ), getSumSymbolRowNode(1, ), getEmptySummationRowNode(1, )],
+    children: [getLimSymbolRowNode(1, ), getBottomLimSymbolRowNode(1, )],
     },
     {
       children: [{ text: " " }]

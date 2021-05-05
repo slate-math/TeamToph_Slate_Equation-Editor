@@ -61,8 +61,11 @@ import { MENTIONABLES } from './config/mentionables'; // Check this
 import 'katex/dist/katex.min.css';
 import components from "./Components"
 import './App.css';
-import { getEmptyFractionNode } from './Components/thfraction/getEmptyFractionNode';
-import { getEmptySummationNode } from './Components/tdSummation/getEmptySummationNode';
+import { getEmptyFractionNode } from './Components/Fraction/thfraction/getEmptyFractionNode';
+import { getEmptySummationNode } from './Components/Summation/getEmptySummationNode';
+import { getEmptyBigOpNode } from './Components/BigOperator/getEmptyBigOpNode'
+import {getEmptyIntegralNode} from './Components/Integral/getEmptyIntegralNode'
+import {getEmptyLimNode} from './Components/Limit/getEmptyLimNode'
 
 
 /*export default {
@@ -270,8 +273,14 @@ const createReactEditor = () => () => {
           </Tooltip>
 
           <Tooltip title="Integral">
-          <button>
-          <Latex displayMode={false}>{`$$ \\int $$`}</Latex>
+          <button onClick={() => { insertEquation(editor, "integral"); }}>
+          {hasIcon("integral")}
+          </button>
+          </Tooltip>
+
+          <Tooltip title="Big Operators">
+          <button onClick={() => { insertEquation(editor, "bigOperator"); }}>
+          {hasIcon("bigOperator")}
           </button>
           </Tooltip>
 
@@ -335,7 +344,16 @@ const insertEquation = (editor, eq) => {
   else if (eq == "summation") {
     Transforms.insertNodes(editor, getEmptySummationNode());
     Transforms.move(editor);  
-  } else {
+  }   else if (eq == "bigOperator") {
+    Transforms.insertNodes(editor, getEmptyBigOpNode());
+    Transforms.move(editor);  
+  } else if (eq == "integral") {
+    Transforms.insertNodes(editor, getEmptyIntegralNode());
+    Transforms.move(editor);  
+  }else if (eq == "limit") {
+    Transforms.insertNodes(editor, getEmptyLimNode());
+    Transforms.move(editor);  
+  }else {
     Transforms.insertNodes(editor, equation);
     Transforms.move(editor);  
   }

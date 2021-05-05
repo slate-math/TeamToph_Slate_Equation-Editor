@@ -3,23 +3,23 @@ import { DEFAULTS_PARAGRAPH } from '@udecode/slate-plugins';
 import { ParagraphPluginOptions } from '@udecode/slate-plugins';
 import { DEFAULTS_TABLE } from '../MatrixTable/defaults';
 import { TableOptions } from '@udecode/slate-plugins';
-import matrixElement from "../MatrixElement/index";
+import LimValue from "./LimValue";
 
 
-export const getEmptyFractionCellNode = (
+export const getBottomLimSymbolCellNode = (
   options?: TableOptions & ParagraphPluginOptions & { header?: boolean }
 ) => {
-  const { th, p } = setDefaults(options, {
+  const { td, p } = setDefaults(options, {
     ...DEFAULTS_TABLE,
     ...DEFAULTS_PARAGRAPH,
   });
 
   return {
-    type: th.type,
+    type: td.type,
     children: [
       {
         type: p.type,
-        children: [matrixElement.slateDOM(),],
+        children: [LimValue.slateDOM(),],
       },
     ],
   };

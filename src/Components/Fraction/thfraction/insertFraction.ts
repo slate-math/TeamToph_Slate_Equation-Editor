@@ -1,7 +1,7 @@
 import { Editor, Transforms } from 'slate';
 import { someNode } from '@udecode/slate-plugins';
 import { setDefaults } from '@udecode/slate-plugins';
-import { DEFAULTS_TABLE } from '../MatrixTable/defaults';
+import { DEFAULTS_TABLE } from '../../MatrixTable/defaults';
 import { TableOptions } from '@udecode/slate-plugins';
 import { getEmptyFractionNode } from './getEmptyFractionNode';
 

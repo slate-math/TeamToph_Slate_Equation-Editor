@@ -1,10 +1,12 @@
 import { setDefaults } from '@udecode/slate-plugins';
 import { DEFAULTS_TABLE } from '../MatrixTable/defaults';
 import { TableOptions } from '@udecode/slate-plugins';
-import { getEmptyFractionRowNode } from './getEmptyFractionRowNode';
+import { getEmptyRowNode } from '../tdComponents/getEmptyRowNode';
+import { getSumSymbolRowNode } from './getSumSymbolRowNode';
 
 
-export const getEmptyFractionNode = (options?: TableOptions) => {
+
+export const getEmptySummationNode = (options?: TableOptions) => {
    const { table} = setDefaults(options, {
     ...DEFAULTS_TABLE,
   });
@@ -15,7 +17,7 @@ export const getEmptyFractionNode = (options?: TableOptions) => {
       children: [{ text: " " }]
     },
     {type: table.type,
-    children: [getEmptyFractionRowNode(1, ), getEmptyFractionRowNode(1, )],
+    children: [getEmptyRowNode(1, ), getSumSymbolRowNode(1, ), getEmptyRowNode(1, )],
     },
     {
       children: [{ text: " " }]

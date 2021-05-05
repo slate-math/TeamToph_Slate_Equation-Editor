@@ -1,0 +1,45 @@
+/*bigOperators*/
+.bigOperator {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.bigOperator > span {
+  display: block;
+  font-size: 80%;
+}
+
+.bigOperator .top-limit {
+  margin-bottom: -0.1ex;
+}
+
+.bigOperator .bottom-limit {
+  margin-top: -0.5ex;
+  font-weight: bolder;
+}
+
+.bigOperator .sum-symbol {
+  font-size: 1.5em;
+  font-weight: bolder;
+}
+
+.bigOperator .symbol-ico {
+  font-size: 2em;
+  font-weight: normal;
+}
+
+.bigOperator .top-limit-ico {
+  margin-bottom: -0.3ex;
+  font-weight: bolder;
+
+}
+
+.bigOperator .bottom-limit-ico {
+  margin-top: -0.3ex;
+  font-weight: bolder;
+
+}
+
+/*End of bigOperators*/

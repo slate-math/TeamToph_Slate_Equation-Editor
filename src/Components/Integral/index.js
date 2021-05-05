@@ -31,9 +31,9 @@ const icon = (attributes, children) => {
   return (
     <>
       <span class="integral" {...attributes}>
-        <span class="toplimit">2&pi;</span>
-        <span class="symbol">&int;</span>
-        <span class="bottomlimit">0</span>
+        <span class="toplimit">x</span>
+        <span class="symbol">&#x222B;</span>
+        <span class="bottomlimit">y</span>
         {children}
       </span>
     </>
